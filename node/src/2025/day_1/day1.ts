@@ -1,9 +1,11 @@
 import { readFile } from 'node:fs/promises';
 
+// pt 1 only, bit of a mess
+
 let contents
 
 try {
-  const filePath = new URL('./day1_test.txt', import.meta.url);
+  const filePath = new URL('./input.txt', import.meta.url);
   contents = await readFile(filePath, { encoding: 'utf8' }) as string;
 } catch (err: any) {
   console.error(err.message);
@@ -20,7 +22,7 @@ const dialTurnsMap = dialTurns?.map((turn) => {
 const dialStart = 50;
 let dialCount = dialStart;
 const dialsReset = 100;
-let zeroDials = 0
+let zeroDials = 0;
 
 dialTurnsMap?.forEach((turn) => {
   if (turn.has('L')) {
