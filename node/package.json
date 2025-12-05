@@ -10,6 +10,7 @@
     "2015:day1": "npx tsx src/2015/day_1/day1.ts",
     "2015:day2": "npx tsx src/2015/day_2/day2.ts",
     "2016:day1": "npx tsx src/2016/day_1/day1.ts",
+    "2016:day2": "npx tsx src/2016/day_2/day2.ts",
     "2025:day1": "npx tsx src/2025/day_1/day1.ts"
   },
   "repository": {
