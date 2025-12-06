@@ -1,17 +1,11 @@
-import { readFile } from 'node:fs/promises';
+import { readTxtFile } from '../../utils/readfile';
+
+const filePath = 'src/2025/day_1/input.txt';
+const file = readTxtFile(filePath);
 
 // pt 1 only, bit of a mess
 
-let contents
-
-try {
-  const filePath = new URL('./input.txt', import.meta.url);
-  contents = await readFile(filePath, { encoding: 'utf8' }) as string;
-} catch (err: any) {
-  console.error(err.message);
-}
-
-const dialTurns = contents?.split('\n');
+const dialTurns = file?.split('\n');
 const dialTurnsMap = dialTurns?.map((turn) => {
   const turnMap = new Map<string, number>()
   const direction = turn[0];

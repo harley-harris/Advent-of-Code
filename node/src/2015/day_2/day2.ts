@@ -1,13 +1,7 @@
-import { readFile } from 'node:fs/promises';
+import { readTxtFile } from '../../utils/readfile';
 
-let file
-
-try {
-  const filePath = new URL('./input.txt', import.meta.url);
-  file = await readFile(filePath, { encoding: 'utf8' }) as string;
-} catch (err: any) {
-  console.error(err.message);
-}
+const filePath = 'src/2015/day_2/input.txt';
+const file = readTxtFile(filePath);
 
 // part 1 + 2
 
