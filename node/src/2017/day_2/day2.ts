@@ -19,4 +19,35 @@ numRows.forEach((row) => {
   total += difference;
 })
 
-console.log(total)
+// console.log(total)
+
+// part 2
+
+let divisibleTotal = 0;
+
+numRows.forEach((row) => {
+  row.forEach((num, i) => {
+    console.log(num);
+    console.log(`Current num index: ${i}`);
+
+    const currentNum = row[i];
+
+    // start loop at the next number after current number, iterate until end of list to complete loop
+    for (let j = i + 1; j < row.length; j++) {
+      console.log(`Current comparison num index: ${j}`);
+      const loopNum = row[j];
+
+      const max = Math.max(currentNum, loopNum);
+      const min = Math.min(currentNum, loopNum);
+
+      // if both nums are evenly divisible
+      if (max % min === 0) {
+        console.log('evenly divisible');
+        divisibleTotal += max / min;
+      } 
+    }
+
+  });
+})
+
+console.log(divisibleTotal)
